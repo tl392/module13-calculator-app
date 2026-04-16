@@ -168,6 +168,10 @@ def find_available_port() -> int:
         return s.getsockname()[1]
 
 @pytest.fixture(scope="session")
+def base_url(fastapi_server):
+    return fastapi_server.rstrip("/")
+
+@pytest.fixture(scope="session")
 def fastapi_server():
     """
     Start a FastAPI test server in a subprocess. If the chosen port (default: 8000)
