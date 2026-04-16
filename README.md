@@ -30,7 +30,7 @@ A FastAPI-based calculator application with PostgreSQL persistence, JWT authenti
 | JWT Login | `POST /login` — validates credentials, returns JWT or 401 |
 | Register Page | `register.html` — username + password form with client-side validation |
 | Login Page | `login.html` — username + password form, stores JWT on success |
-| Playwright E2E Tests | 4 tests: 2 positive (register + login), 2 negative (bad password + wrong creds) |
+| Tests | Unit test, Integration test & E2E test for all functionality |
 | CI/CD | GitHub Actions: spins up DB, runs Playwright tests, pushes to Docker Hub |
 
 ---
@@ -69,18 +69,6 @@ module13-calculator-app/
 ├── pytest.ini                   # Pytest configuration
 └── requirements.txt
 ```
-
-**New files since Module 11:**
-- `app/auth.py` — JWT helpers
-- `app/routers/auth_router.py` — `/register` and `/login` endpoints
-- `static/` — CSS/JS assets for front-end pages
-- `templates/register.html` — registration UI (Jinja2 template)
-- `templates/login.html` — login UI (Jinja2 template)
-- `init-db.sh` — database initialization script
-- `pytest.ini` — pytest configuration
-- `tests/e2e/test_auth.spec.js` — Playwright E2E test suite
-
----
 
 ## How to Run Locally
 
